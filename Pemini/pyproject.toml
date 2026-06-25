@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=42","wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pemini"
+version = "0.1.0"
+description = "Pemini — APK verify, extract, strip and re-sign tool with PEM and bulk-sign support."
+authors = [
+  { name = "nlkm8850-collab", email = "you@example.com" }
+]
+requires-python = ">=3.8"
+dependencies = [
+  "click>=8.0"
+]
+
+[project.scripts]
+pemini = "pemini.cli:cli"
