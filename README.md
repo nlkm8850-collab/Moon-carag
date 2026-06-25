@@ -41,4 +41,178 @@ Pemini هو تطبيق ذكاء اصطناعي متقدم مصمم لمساعد�
 
 ---
 
+## 🛠️ أداة Pemini
+
+### Pemini 0.7 - أداة التحليل والتطوير المتقدمة
+
+**Pemini 0.7** هي أداة قوية وخفيفة الوزن مصممة خصيصاً للعمل على **Termux** وأي بيئة سطر أوامر Linux. توفر تجربة برمجية متكاملة مباشرة من الجهاز الطرفي.
+
+### المميزات ا��أساسية:
+- 🔍 **تحقق شامل من الأكواد** - فحص الأخطاء النحوية والمنطقية
+- 💻 **دعم جميع لغات البرمجة**:
+  - Python 🐍
+  - JavaScript/Node.js 📜
+  - Java ☕
+  - C/C++ 🔧
+  - C# 🟦
+  - PHP 🐘
+  - Ruby 💎
+  - Go 🐹
+  - Rust 🦀
+  - TypeScript 📘
+  - وغيرها...
+- 🎯 **تحليل الأخطاء** - تشخيص دقيق للمشاكل مع اقتراحات للحل
+- ⚡ **أداء سريع** - معالجة فورية للأكواد
+- 📊 **تقارير تفصيلية** - عرض شامل للنتائج والإحصائيات
+- 🔐 **آمن وموثوق** - لا يحتاج لاتصال بالإنترنت للعمل الأساسي
+- 🎨 **واجهة ملونة** - عرض احترافي للنتائج
+
+### التثبيت على Termux:
+
+#### الخطوة 1: تحديث النظام
+```bash
+apt update && apt upgrade -y
+```
+
+#### الخطوة 2: تثبيت المتطلبات
+```bash
+apt install git python python-pip nodejs -y
+```
+
+#### الخطوة 3: استنساخ المشروع من GitHub
+```bash
+git clone https://github.com/nlkm8850-collab/Moon-carag.git
+cd Moon-carag/pemini-0.7
+```
+
+#### الخطوة 4: تثبيت المتطلبات الخاصة
+```bash
+pip install -r requirements.txt
+```
+
+#### الخطوة 5: منح صلاحيات التنفيذ
+```bash
+chmod +x pemini.py
+chmod +x pemini
+```
+
+### طرق الاستخدام:
+
+#### 1. التحقق من ملف Python
+```bash
+./pemini check file.py
+# أو
+python pemini.py check file.py
+```
+
+#### 2. التحقق من ملف JavaScript
+```bash
+./pemini check script.js
+```
+
+#### 3. التحقق من جميع الملفات في المجلد
+```bash
+./pemini check --recursive .
+```
+
+#### 4. تقرير تفصيلي
+```bash
+./pemini check file.js --verbose
+```
+
+#### 5. عرض الاقتراحات والحلول
+```bash
+./pemini suggest file.py
+```
+
+#### 6. إصلاح تلقائي للأكواد
+```bash
+./pemini fix file.py --auto
+```
+
+### أمثلة على الاستخدام:
+
+**مثال 1: فحص ملف Python**
+```bash
+$ ./pemini check app.py
+┌─────────────────────────────────────┐
+│     تقرير التحليل - Pemini 0.7      │
+└─────────────────────────────────────┘
+ملف: app.py
+الحالة: ✓ نظيف (مع تحذيرات)
+الأخطاء: 0
+التحذيرات: 2
+```
+
+**مثال 2: فحص ملف JavaScript مع اقتراحات**
+```bash
+$ ./pemini suggest index.js
+الاقتراحات:
+✓ استخدم const بدلاً من var
+✓ أضف معالجة للأخطاء في الدالة
+```
+
+### المميزات المتقدمة:
+
+- 📈 **تحليل الأداء** - معلومات عن تعقيد الخوارزمية
+- 🔗 **كشف التبعيات** - عرض جميع المكتبات المستخدمة
+- 🐛 **تتبع الأخطاء** - معرفة موقع الخطأ بدقة
+- 🎓 **شرح الأخطاء** - توضيح لماذا حدث الخطأ
+
+### الملفات المتضمنة:
+
+```
+pemini-0.7/
+├── pemini              (ملف تنفيذي رئيسي)
+├── pemini.py           (كود Python الرئيسي)
+├── requirements.txt    (المكتبات المطلوبة)
+├── config.json         (إعدادات التكوين)
+├── analyzers/          (أدوات التحليل)
+│   ├── python_analyzer.py
+│   ├── js_analyzer.py
+│   ├── java_analyzer.py
+│   └── cpp_analyzer.py
+├── reporters/          (أدوات التقرير)
+│   ├── console_reporter.py
+│   └── json_reporter.py
+└── README.md           (التوثيق الكامل)
+```
+
+### المتطلبات الأساسية:
+
+```
+Python 3.8+
+Node.js 12+
+Git
+RAM: 512 MB (الحد الأدنى)
+مساحة تخزين: 100 MB
+```
+
+### رابط التحميل من GitHub:
+
+🔗 **[Pemini 0.7 على GitHub](https://github.com/nlkm8850-collab/Moon-carag/releases/download/pemini-0.7/pemini-0.7.tar.gz)**
+
+أو باستخدام الأمر:
+```bash
+wget https://github.com/nlkm8850-collab/Moon-carag/releases/download/pemini-0.7/pemini-0.7.tar.gz
+tar -xzf pemini-0.7.tar.gz
+cd pemini-0.7
+pip install -r requirements.txt
+```
+
+### الدعم والمساعدة:
+
+إذا واجهت أي مشاكل:
+- 📖 اقرأ [التوثيق الكامل](https://github.com/nlkm8850-collab/Moon-carag/wiki/Pemini-0.7)
+- 💬 [افتح issue جديد](https://github.com/nlkm8850-collab/Moon-carag/issues)
+- 🤝 ساهم في تطوير المشروع
+
+### الإصدارات السابقة:
+
+- **Pemini 0.5** - الإصدار الأول
+- **Pemini 0.6** - إضافة دعم لغات جديدة
+- **Pemini 0.7** - الإصدار الحالي (محسّن وأسرع) ⭐
+
+---
+
 *Moon-carag: منصتك الموثوقة لتطوير البرمجيات والأتمتة الذكية*
