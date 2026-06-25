@@ -45,9 +45,9 @@ Pemini هو تطبيق ذكاء اصطناعي متقدم مصمم لمساعد�
 
 ### Pemini 0.7 - أداة التحليل والتطوير المتقدمة
 
-**Pemini 0.7** هي أداة قوية وخفيفة الوزن مصممة خصيصاً للعمل على **Termux** وأي بيئة سطر أوامر Linux. توفر تجربة برمجية متكاملة مباشرة من الجهاز الطرفي.
+**Pemini 0.7** هي أداة قوية وخفيفة الوزن مصممة خصيصاً للعمل على **Termux** وأي بيئة سطر أوامر Linux. توفر تجربة برمجية متكاملة.
 
-### المميزات ا��أساسية:
+### المميزات الأساسية:
 - 🔍 **تحقق شامل من الأكواد** - فحص الأخطاء النحوية والمنطقية
 - 💻 **دعم جميع لغات البرمجة**:
   - Python 🐍
@@ -215,4 +215,237 @@ pip install -r requirements.txt
 
 ---
 
-*Moon-carag: منصتك الموثوقة لتطوير البرمجيات والأتمتة الذكية*
+## 📚 برمجة 0.1 - أداة تعليم البرمجة التفاعلية
+
+### نبذة عن برمجة 0.1
+**برمجة 0.1** هي أداة تعليمية متخصصة لتعلم البرمجة بطريقة تفاعلية وممتعة. مصممة للعمل على **Termux** و**Linux** بسهولة، توفر دروساً عملية وتطبيقية لجميع مستويات المبتدئين.
+
+### المميزات الرئيسية:
+- 🎓 **دروس تفاعلية** - شروحات مفصلة لأساسيات البرمجة
+- 💡 **أمثلة عملية** - أمثلة حقيقية قابلة للتنفيذ
+- 🏆 **تحديات برمجية** - مشاكل وتحديات لتطبيق ما تعلمته
+- 🐍 **دعم لغات متعددة**:
+  - Python 🐍 (مبتدئ إلى متقدم)
+  - JavaScript 📜 (من الأساسيات إلى DOM)
+  - Java ☕ (البرمجة كائنية التوجه)
+  - C/C++ 🔧 (الخوارزميات والبنى)
+  - SQL 🗄️ (قواعد البيانات)
+- 📊 **تتبع التقدم** - معرفة مستواك والدروس المتبقية
+- 🔍 **تصحيح فوري** - تعليقات فورية على إجاباتك
+- 🌍 **محتوى عربي وإنجليزي** - تعلم بلغتك المفضلة
+
+### التثبيت على Termux:
+
+#### الخطوة 1: تحديث النظام
+```bash
+apt update && apt upgrade -y
+```
+
+#### الخطوة 2: تثبيت المتطلبات الأساسية
+```bash
+apt install git python python-pip curl wget -y
+```
+
+#### الخطوة 3: استنساخ المشروع
+```bash
+git clone https://github.com/nlkm8850-collab/Moon-carag.git
+cd Moon-carag/programming-0.1
+```
+
+#### الخطوة 4: تثبيت متطلبات Python
+```bash
+pip install -r requirements.txt
+```
+
+#### الخطوة 5: منح صلاحيات التنفيذ
+```bash
+chmod +x programming-0.1
+chmod +x main.py
+```
+
+### التثبيت على Linux:
+
+#### الخطوة 1: تحديث النظام
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+#### الخطوة 2: تثبيت المتطلبات
+```bash
+sudo apt install git python3 python3-pip curl -y
+```
+
+#### الخطوة 3: استنساخ المشروع
+```bash
+git clone https://github.com/nlkm8850-collab/Moon-carag.git
+cd Moon-carag/programming-0.1
+```
+
+#### الخطوة 4: تثبيت المكتبات
+```bash
+sudo pip3 install -r requirements.txt
+```
+
+#### الخطوة 5: منح الصلاحيات
+```bash
+sudo chmod +x programming-0.1
+sudo chmod +x main.py
+```
+
+### طرق الاستخدام:
+
+#### 1. عرض الدروس المتاحة
+```bash
+./programming-0.1 --list
+# أو
+python main.py --list
+```
+
+#### 2. بدء درس معين
+```bash
+./programming-0.1 --lesson python-basics
+```
+
+#### 3. حل تحدي برمجي
+```bash
+./programming-0.1 --challenge challenge-01
+```
+
+#### 4. عرض إحصائياتك
+```bash
+./programming-0.1 --stats
+```
+
+#### 5. اختبر معلوماتك
+```bash
+./programming-0.1 --quiz python
+```
+
+#### 6. اطلب شرحاً لموضوع معين
+```bash
+./programming-0.1 --explain "loops in python"
+```
+
+### أمثلة على الاستخدام:
+
+**مثال 1: بدء درس Python للمبتدئين**
+```bash
+$ ./programming-0.1 --lesson python-basics
+╔═══════════════════════════════════════╗
+║      برمجة 0.1 - أداة التعليم         ║
+╚═══════════════════════════════════════╝
+
+📚 الدرس: أساسيات Python
+⏱️ المدة: 15 دقيقة
+
+📖 المحتوى:
+1. مقدمة عن Python
+2. المتغيرات والأنواع
+3. العمليات الحسابية
+4. الطباعة على الشاشة
+
+💡 مثال عملي:
+print("مرحباً بك في عالم البرمجة!")
+```
+
+**مثال 2: حل تحدي برمجي**
+```bash
+$ ./programming-0.1 --challenge sum-array
+🎯 التحدي: أوجد مجموع عناصر المصفوفة
+
+المشكلة:
+اكتب برنامج يجمع جميع الأرقام في قائمة
+
+📝 الحل المقترح:
+numbers = [1, 2, 3, 4, 5]
+total = sum(numbers)
+print(total)
+
+✅ تم التحقق: الحل صحيح!
+🏆 +10 نقاط
+```
+
+### المحتوى التعليمي:
+
+```
+Lessons/
+├── Python/
+│   ├── 01-basics.md
+│   ├── 02-variables.md
+│   ├── 03-conditionals.md
+│   ├── 04-loops.md
+│   ├── 05-functions.md
+│   └── 06-projects.md
+├── JavaScript/
+│   ├── 01-introduction.md
+│   ├── 02-variables.md
+│   └── 03-dom.md
+├── Java/
+│   ├── 01-oop-basics.md
+│   └── 02-classes.md
+└── Challenges/
+    ├── beginner/
+    ├── intermediate/
+    └── advanced/
+```
+
+### الملفات المتضمنة:
+
+```
+programming-0.1/
+├── main.py              (البرنامج الرئيسي)
+├── programming-0.1      (ملف تنفيذي)
+├── requirements.txt     (المكتبات المطلوبة)
+├── config.json          (الإعدادات)
+├── lessons/             (الدروس التعليمية)
+├── challenges/          (التحديات البرمجية)
+├── database/            (قاعدة بيانات التقدم)
+└── templates/           (النماذج والقوائم)
+```
+
+### المتطلبات:
+
+```
+Python 3.7+
+Git
+نظام التشغيل: Termux أو Linux
+مساحة التخزين: 50 MB
+RAM: 256 MB (الحد الأدنى)
+```
+
+### الوصول السريع:
+
+🔗 **[برمجة 0.1 على GitHub](https://github.com/nlkm8850-collab/Moon-carag/releases/download/programming-0.1/programming-0.1.tar.gz)**
+
+أو عبر:
+```bash
+wget https://github.com/nlkm8850-collab/Moon-carag/releases/download/programming-0.1/programming-0.1.tar.gz
+tar -xzf programming-0.1.tar.gz
+cd programming-0.1
+pip install -r requirements.txt
+./programming-0.1 --help
+```
+
+### مستويات التعلم:
+
+- 🟢 **مبتدئ** - من الصفر إلى الدوال الأساسية
+- 🟡 **متوسط** - البرمجة كائنية التوجه والمكتبات
+- 🔴 **متقدم** - الخوارزميات والبنى المعقدة
+
+### نصائح للاستفادة القصوى:
+
+1. 📖 ابدأ بالدروس الأساسية قبل التحديات
+2. ✍️ اكتب الكود بنفسك لا تنسخها
+3. 🔄 كرر الأمثلة عدة مرات حتى تتقنها
+4. 🎯 انتقل للتحديات بعد فهم كل درس
+5. 📊 راقب تقدمك من خلال الإحصائيات
+
+### الدعم والمساعدة:
+
+- 📚 [التوثيق الكامل](https://github.com/nlkm8850-collab/Moon-carag/wiki/Programming-0.1)
+- 💬 [افتح issue جديد](https://github.com/nlkm8850-collab/Moon-carag/issues)
+- 🤝 ساهم بدرس أو تحدي جديد
+
+---
+
+*Moon-carag: منصتك الموثوقة لتطوير البرمجيات والتعليم الذاتي*
