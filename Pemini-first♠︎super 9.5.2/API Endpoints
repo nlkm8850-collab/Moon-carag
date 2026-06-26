@@ -1,0 +1,24 @@
+
+---
+
+### 17. `.env.example`
+
+```bash
+# Application
+APP_NAME=Pemini Girl
+APP_VERSION=9.5.2
+SECRET_KEY=change-this-in-production
+
+# Database
+DATABASE_URL=postgresql://pemini:pemini123@localhost:5432/pemini_db
+
+# Redis
+REDIS_URL=redis://localhost:6379/0
+
+# LLM
+MODEL_NAME=codellama/CodeLlama-7b-hf
+OPENAI_API_KEY=your-key-here
+
+# Server
+HOST=0.0.0.0
+PORT=8080

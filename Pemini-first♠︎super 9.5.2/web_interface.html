@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemini Girl 9.5.2</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, sans-serif; background: #0f0f1a; color: #e2e8f0; min-height: 100vh; }
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #1a1a2e; border-bottom: 1px solid #2d3748; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #8b5cf6; }
+        .auth-card { background: #1a1a2e; border: 1px solid #2d3748; border-radius: 16px; padding: 2rem; max-width: 400px; margin: 2rem auto; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; color: #94a3b8; }
+        .form-group input { width: 100%; padding: 0.75rem; background: #16213e; border: 1px solid #2d3748; border-radius: 8px; color: #e2e8f0; }
+        .btn { width: 100%; padding: 0.75rem; background: #8b5cf6; color: white; border: none; border-radius: 8px; cursor: pointer; margin-top: 1rem; }
+        .btn:hover { background: #7c3aed; }
+        .version-card { background: #16213e; border: 2px solid #2d3748; border-radius: 12px; padding: 1.5rem; margin: 1rem; cursor: pointer; }
+        .version-card:hover { border-color: #8b5cf6; }
+        .version-card.active { border-color: #10b981; }
+        .code-input { width: 100%; min-height: 100px; padding: 1rem; background: #16213e; border: 1px solid #2d3748; border-radius: 8px; color: #e2e8f0; font-family: monospace; margin: 1rem 0; }
+        .code-output { background: #16213e; border: 1px solid #2d3748; border-radius: 8px; padding: 1rem; font-family: monospace; min-height: 150px; }
+        .toolbar { display: flex; gap: 0.5rem; margin: 1rem 0; flex-wrap: wrap; }
+        .toolbar-btn { padding: 0.5rem 1rem; background: #16213e; border: 1px solid #2d3748; border-radius: 6px; color: #e2e8f0; cursor: pointer; }
+        .toolbar-btn:hover { border-color: #8b5cf6; }
+        select { padding: 0.5rem; background: #16213e; border: 1px solid #2d3748; border-radius: 6px; color: #e2e8f0; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">🌟 Pemini Girl <span style="font-size:0.75rem;background:#8b5cf6;padding:0.2rem 0.5rem;border-radius:10px;">9.5.2</span></div>
+        <div id="user-menu" style="cursor:pointer;">👤 Guest</div>
+    </header>
+
+    <div id="login-page">
+        <div class="auth-card">
+            <h2 style="text-align:center;margin-bottom:1rem;">🌟 Login</h2>
+            <div class="form-group">
+                <label>Username or Email</label>
+                <input type="text" id="login-username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="login-password" placeholder="Enter password">
+            </div>
+            <button class="btn" onclick="login()">Login</button>
+            <p style="text-align:center;margin-top:1rem;color:#94a3b8;">
+                No account? <a href="#" onclick="showRegister()" style="color:#8b5cf6;">Register</a>
+            </p>
+        </div>
+    </div>
+
+    <div id="register-page" class="hidden">
+        <div class="auth-card">
+            <h2 style="text-align:center;margin-bottom:1rem;">🚀 Register</h2>
+            <div class="form-group"><label>Username</label><input type="text" id="reg-username"></div>
+            <div class="form-group"><label>Email</label><input type="email" id="reg-email"></div>
+            <div class="form-group"><label>Display Name</label><input type="text" id="reg-display"></div>
+            <div class="form-group"><label>Password</label><input type="password" id="reg-password"></div>
+            <button class="btn" onclick="register()">Register</button>
+            <button class="btn" onclick="showLogin()" style="background:transparent;border:1px solid #2d3748;margin-top:0.5rem;">Have account? Login</button>
+        </div>
+    </div>
+
+    <div id="home-page" class="hidden" style="padding:2rem;">
+        <h2 style="margin-bottom:1rem;">🔄 Switch Version</h2>
+        <div style="display:flex;gap:1rem;">
+            <div class="version-card" onclick="switchVersion('pro')">
+                <div style="font-size:2rem;">🔧</div>
+                <h3>Pemini Pro 7.0</h3>
+                <p style="color:#94a3b8;">Classic - Advanced Analysis</p>
+            </div>
+            <div class="version-card active" onclick="switchVersion('girl')">
+                <div style="font-size:2rem;">🌟</div>
+                <h3>Pemini Girl 9.5.2</h3>
+                <p style="color:#94a3b8;">Lumina - Trilingual AI</p>
+            </div>
+        </div>
+
+        <h2 style="margin:2rem 0 1rem;">💻 Code Editor</h2>
+        <div class="toolbar">
+            <select id="code-language">
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+                <option value="java">Java</option>
+                <option value="cpp">C++</option>
+            </select>
+            <button class="toolbar-btn" onclick="generate()">✨ Generate</button>
+            <button class="toolbar-btn" onclick="analyze()">🔍 Analyze</button>
+            <button class="toolbar-btn" onclick="explain()">📖 Explain</button>
+        </div>
+        <textarea class="code-input" id="code-input" placeholder="Describe the code you want..."></textarea>
+        <div class="code-output" id="code-output">Result will appear here...</div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8080/api';
+        let token = localStorage.getItem('pemini_token');
+
+        function showLogin() { document.getElementById('login-page').classList.remove('hidden'); document.getElementById('register-page').classList.add('hidden'); }
+        function showRegister() { document.getElementById('login-page').classList.add('hidden'); document.getElementById('register-page').classList.remove('hidden'); }
+        function showHome() { document.getElementById('login-page').classList.add('hidden'); document.getElementById('register-page').classList.add('hidden'); document.getElementById('home-page').classList.remove('hidden'); }
+
+        async function login() {
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+            try {
+                const res = await fetch(`${API_URL}/auth/login`, {
+                    method: 'POST', headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({username_or_email: username, password})
+                });
+                const data = await res.json();
+                if (data.success) {
+                    token = data.token;
+                    localStorage.setItem('pemini_token', token);
+                    showHome();
+                    document.getElementById('user-menu').textContent = '👤 ' + data.user.display_name;
+                } else {
+                    alert(data.message);
+                }
+            } catch (e) { alert('Connection error'); }
+        }
+
+        async function register() {
+            const username = document.getElementById('reg-username').value;
+            const email = document.getElementById('reg-email').value;
+            const display_name = document.getElementById('reg-display').value;
+            const password = document.getElementById('reg-password').value;
+            try {
+                const res = await fetch(`${API_URL}/auth/register`, {
+                    method: 'POST', headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({username, email, password, display_name})
+                });
+                const data = await res.json();
+                if (data.success) { alert('Registered! Please login.'); showLogin(); }
+                else { alert(data.message); }
+            } catch (e) { alert('Connection error'); }
+        }
+
+        function switchVersion(ver) {
+            document.querySelectorAll('.version-card').forEach(c => c.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            alert('Switched to ' + (ver === 'pro' ? 'Pemini Pro 7.0' : 'Pemini Girl 9.5.2'));
+        }
+
+        async function generate() {
+            const prompt = document.getElementById('code-input').value;
+            const lang = document.getElementById('code-language').value;
+            if (!prompt) { alert('Enter a description'); return; }
+            document.getElementById('code-output').textContent = 'Generating...';
+            try {
+                const res = await fetch(`${API_URL}/code/generate`, {
+                    method: 'POST', headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`},
+                    body: JSON.stringify({prompt, target_language: lang, natural_language: 'en'})
+                });
+                const data = await res.json();
+                if (data.success) {
+                    document.getElementById('code-output').innerHTML = `<pre>${data.code}</pre>`;
+                }
+            } catch (e) { document.getElementById('code-output').textContent = 'Error'; }
+        }
+
+        function analyze() { alert('Analyze feature'); }
+        function explain() { alert('Explain feature'); }
+
+        if (token) showHome();
+    </script>
+</body>
+</html>
