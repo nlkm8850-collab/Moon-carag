@@ -1,0 +1,12 @@
+{
+  "name": "Samsung Galaxy S24",
+  "url": "https://example.com/product/1",
+  "your_price": 2999,
+  "selector": ".price"
+},
+{
+  "name": "Apple AirPods Pro",
+  "url": "https://example.com/product/2",
+  "your_price": 899,
+  "selector": ".price"
+}
